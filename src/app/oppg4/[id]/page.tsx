@@ -10,15 +10,14 @@ async function fetchComments(postId: string) {
   return res.json();
 }
 
-// Fast: no delay
 async function PostTitle({ id }: { id: string }) {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const post = await fetchPost(id);
   return <h2>{post.title}</h2>;
 }
 
-// Slow: simulate delay
 async function PostComments({ id }: { id: string }) {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 4000));
   const comments: { id: number; name: string }[] = await fetchComments(id);
 
   return (
