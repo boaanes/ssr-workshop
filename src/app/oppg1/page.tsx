@@ -1,4 +1,4 @@
-// Exercise 1: Basic client-side data fetching with useEffect in a Client Component.
+// 🧠 Oppgave: Skriv om denne komponenten slik at slik at dataene i stedet hentes på serveren med getServerSideProps
 "use client";
 
 import { useEffect, useState } from "react";
