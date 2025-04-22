@@ -4,26 +4,19 @@ type Post = {
   body: string;
 };
 
-async function PostWithDelay({ id }: { id: string }) {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+// 🧠 Oppgave: Splitt opp komponenten i flere komponenter slik at det som krever ekstern data
+// håndteres i en egen komponent
+export default async function Oppg3({ params }: { params: { id: string } }) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.id}`,
+  );
   const post: Post = await res.json();
 
   return (
-    <>
+    <div>
+      <h1>Exercise 2: Dynamic Route for Post</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-    </>
-  );
-}
-
-// 🧠 Oppgave: Bruk react sin Suspense for å vise en loading state mens dataene hentes
-export default function Oppg3Page({ params }: { params: { id: string } }) {
-  return (
-    <div>
-      <h1>Exercise 3: Suspense Loading State</h1>
-      <PostWithDelay id={params.id} />
     </div>
   );
 }
