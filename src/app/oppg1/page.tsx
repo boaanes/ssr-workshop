@@ -1,4 +1,4 @@
-// 🧠 Oppgave: Skriv om denne komponenten slik at slik at dataene i stedet hentes på serveren med getServerSideProps
+// 🧠 Oppgave: Skriv om denne komponenten slik at slik at dataene i stedet hentes på serveren
 "use client";
 
 import { useEffect, useState } from "react";
