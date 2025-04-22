@@ -32,7 +32,7 @@ async function PostComments({ id }: { id: string }) {
   );
 }
 
-// 🧠 Oppgave: Wrapp <PostComments /> i <Suspense> slik at tittelen vises med en gang
+// 🧠 Oppgave: Bruk react sin suspense for å vise en loading state mens de ulike komponentene rendres
 export default function Oppg4Page({ params }: { params: { id: string } }) {
   return (
     <div>
@@ -40,7 +40,6 @@ export default function Oppg4Page({ params }: { params: { id: string } }) {
 
       <PostTitle id={params.id} />
 
-      {/* TODO: Wrapp denne i Suspense */}
       <PostComments id={params.id} />
     </div>
   );
